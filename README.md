@@ -14,7 +14,7 @@
 
 # 窥视
 
-![image](readme-pictures\1.png)
+![image](readme-pictures/1.png)
 
 配置串：
 
@@ -23,7 +23,7 @@
 ```
 生成效果：
 
-![image](readme-pictures\M_1920x1080_cx-0.416_cy0.574_pd2e-6_t1023.png)
+![image](readme-pictures/M_1920x1080_cx-0.416_cy0.574_pd2e-6_t1023.png)
 
 # 计划
 
