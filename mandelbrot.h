@@ -9,8 +9,14 @@
 #include <QRunnable>
 #include <QThreadPool>
 #include <QMutex>
+#include <QRgb>
 
 namespace Mandelbrot {
+
+    class Render {
+    public:
+        virtual QRgb getPixelColor(size_t times) = 0;
+    };
 
     class Writer {
     public:
@@ -28,15 +34,18 @@ namespace Mandelbrot {
     private:
         unsigned char* const row_data;
         const size_t max_times;
+        Render* const render;
 
     public:
-        RectangleImageWriter(unsigned char* row_data, size_t max_times) :
-            row_data(row_data), max_times(max_times) {
+        RectangleImageWriter(unsigned char* row_data, size_t max_times, Render* render) :
+            row_data(row_data), max_times(max_times), render(render) {
         }
         virtual void set(size_t final_times) {
-            row_data[0] = 255 - 255 * final_times / max_times;
-            row_data[1] = row_data[0];
-            row_data[2] = row_data[0];
+            QRgb rgb;
+            rgb = render->getPixelColor(final_times);
+            row_data[2] = rgb & 0xff;
+            row_data[1] = (rgb >> 8) & 0xff;
+            row_data[0] = (rgb >> 16) & 0xff;
         }
     };
 
@@ -54,11 +63,12 @@ namespace Mandelbrot {
         int y;
         const size_t max_times;
         QMutex mutex;
+        Render* const render;
     public:
-        RectangleImageReader(QImage* img, T lux, T luy, T width, T height, size_t max_times) :
+        RectangleImageReader(QImage* img, T lux, T luy, T width, T height, size_t max_times, Render* render) :
             img(img), lux(lux), luy(luy), width(width), height(height),
             pwidth(img->width()), pheight(img->height()),
-            x(0), y(0), max_times(max_times), mutex() {
+            x(0), y(0), max_times(max_times), mutex(), render(render) {
         }
         virtual int getProgress() {
             return (y * pwidth + x) * 100 / (pwidth * pheight);
@@ -71,7 +81,7 @@ namespace Mandelbrot {
             }
             c_real = width * x / (T)(pwidth - 1) + lux;
             c_imag = height * y / (T)(pheight - 1) - luy;
-            Writer* w = new RectangleImageWriter(img->scanLine(y) + x * 3, this->max_times);
+            Writer* w = new RectangleImageWriter(img->scanLine(y) + x * 3, this->max_times, render);
             x++;
             if(x >= pwidth) {
                 x = 0;

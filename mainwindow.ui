@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1118</width>
-    <height>625</height>
+    <width>1279</width>
+    <height>415</height>
    </rect>
   </property>
   <property name="sizeIncrement">
@@ -48,6 +48,12 @@ QLineEdit:editable {
            <layout class="QHBoxLayout" name="horizontalLayout_20">
             <item>
              <widget class="QLineEdit" name="widthPixelLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -74,6 +80,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="heightPixelLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -119,6 +131,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="centerRealLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>100</width>
@@ -156,6 +174,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="centerImagLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>100</width>
@@ -204,6 +228,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="LURealLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -241,6 +271,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="LUImagLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -289,6 +325,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="RURealLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -326,6 +368,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="RUImagLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -374,6 +422,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="RDRealLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -411,6 +465,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="RDImagLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -459,6 +519,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="LDRealLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -496,6 +562,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="LDImagLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -545,6 +617,12 @@ QLineEdit:editable {
           </item>
           <item>
            <widget class="QLineEdit" name="pixelLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -581,6 +659,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="widthLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -618,6 +702,12 @@ QLineEdit:editable {
             </item>
             <item>
              <widget class="QLineEdit" name="heightLineEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -647,6 +737,12 @@ QLineEdit:editable {
          <layout class="QHBoxLayout" name="horizontalLayout_25">
           <item>
            <widget class="QLineEdit" name="filenameLineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -762,20 +858,6 @@ QLineEdit:editable {
        </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="test1PushButton">
-        <property name="text">
-         <string>测试1</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="test2PushButton">
-        <property name="text">
-         <string>测试2</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
          <spacer name="verticalSpacer_3">
@@ -798,18 +880,49 @@ QLineEdit:editable {
          </widget>
         </item>
         <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_28">
+          <item>
+           <widget class="QPushButton" name="editSenderPushButton">
+            <property name="text">
+             <string>编辑着色器</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
          <layout class="QHBoxLayout" name="horizontalLayout_26">
           <item>
            <widget class="QPushButton" name="copyConfigPushButton">
             <property name="text">
-             <string>复制以上配置到剪贴板</string>
+             <string>复制配置</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="pasteConfigPushButton">
             <property name="text">
-             <string>从剪贴板读取配置并预览</string>
+             <string>粘贴配置</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="openHistoryPushButton">
+            <property name="text">
+             <string>历史记录</string>
             </property>
            </widget>
           </item>
@@ -833,7 +946,7 @@ QLineEdit:editable {
      </layout>
     </item>
     <item>
-     <widget class="Line" name="line">
+     <widget class="Line" name="showLine">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -953,24 +1066,70 @@ QLineEdit:editable {
      </layout>
     </item>
     <item>
-     <widget class="Line" name="line_3">
+     <widget class="Line" name="historyLine">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QListView" name="listView">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="editTriggers">
-       <set>QAbstractItemView::NoEditTriggers</set>
+     <layout class="QVBoxLayout" name="historyVerticalLayout">
+      <item>
+       <widget class="QLabel" name="historyLabel">
+        <property name="text">
+         <string>历史记录</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListView" name="historyListView">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="shaderLine">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
       </property>
      </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="shaderVerticalLayout">
+      <item>
+       <widget class="QLabel" name="shaderLabel">
+        <property name="text">
+         <string>编辑着色器</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="shaderTextEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="shaderErrorLabel">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

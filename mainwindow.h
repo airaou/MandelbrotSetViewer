@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <mandelbrot.h>
 #include "calculatormanager.h"
+#include "timesrender.h"
+
 class QGraphicsScene;
 class QGraphicsLineItem;
 class QCheckBox;
@@ -82,11 +84,10 @@ private slots:
     void onViewcalcmgrFinished(int ms_time);
     void onGenecalcmgrFinished(int ms_time);
 
-    void on_test1PushButton_clicked();
+    void on_openHistoryPushButton_clicked();
+    void on_historyListView_doubleClicked(const QModelIndex &index);
 
-    void on_test2PushButton_clicked();
-
-    void on_listView_doubleClicked(const QModelIndex &index);
+    void on_editSenderPushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -103,6 +104,8 @@ private:
 
     QStringList strlist;
     QStringListModel* model;
+
+    TimesRender timesRender;
 
     void setViewSize(int w, int h);
     void countChecked(int& real_cnt, int& imag_cnt, int& final_cnt, int& s);

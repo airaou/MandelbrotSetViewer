@@ -11,6 +11,7 @@
 #include <QClipboard>
 #include <QRegExp>
 #include <QStringListModel>
+#include "timesrender.h"
 
 /**
  * @brief 更换输入框错误标记(消去,添加)
@@ -77,7 +78,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->graphicsView->setScene(scene);
     scene->addItem(pixmapItem);
 
-    ui->listView->setModel(model);
+    ui->historyListView->setModel(model);
 
 //    setMaximumSize(size());
 //    setMinimumSize(size());
@@ -93,6 +94,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->threadTotalSpinBox->setValue(4);
     ui->timesSpinBox->setValue(255);
     //ui->viewButton->click();
+
+    ui->historyLine->setVisible(false);
+    ui->historyListView->setVisible(false);
+    ui->historyLabel->setVisible(false);
+
+    ui->editSenderPushButton->setText(QString::fromUtf8("编辑着色器"));
+    ui->shaderLine->setVisible(false);
+    ui->shaderTextEdit->setVisible(false);
+    ui->shaderLabel->setVisible(false);
+    ui->shaderErrorLabel->setVisible(false);
+    ui->shaderTextEdit->setText(timesRender.default_render);
+    timesRender.read_string(timesRender.default_render);
+
+
 }
 
 MainWindow::~MainWindow() {
@@ -511,7 +526,7 @@ void MainWindow::on_viewButton_clicked() {
 
     viewImg = new QImage(pw, ph, QImage::Format_RGB888);
     viewImgReader = new Mandelbrot::RectangleImageReader<double>(
-                viewImg, lux, luy, width, height, getMaxtimes());
+                viewImg, lux, luy, width, height, getMaxtimes(), &timesRender);
     viewCalcMgr = new CalculatorManager(
                 *viewImgReader, ui->threadTotalSpinBox->value());
     QObject::connect(viewCalcMgr, SIGNAL(finished(int)),
@@ -577,7 +592,7 @@ void MainWindow::on_generateButton_clicked() {
 
     geneImg = new QImage(pw, ph, QImage::Format_RGB888);
     geneImgReader = new Mandelbrot::RectangleImageReader<double>(
-                geneImg, lux, luy, width, height, getMaxtimes());
+                geneImg, lux, luy, width, height, getMaxtimes(), &timesRender);
     geneCalcMgr = new CalculatorManager(
                 *geneImgReader, ui->threadTotalSpinBox->value());
     QObject::connect(geneCalcMgr, SIGNAL(progress(int)),
@@ -1055,21 +1070,39 @@ void MainWindow::on_pasteConfigPushButton_clicked() {
     }
 }
 
-void MainWindow::on_test1PushButton_clicked() {
-
-    strlist.append(QString::fromUtf8("Hello"));
-    model->setStringList(strlist);
+void MainWindow::on_openHistoryPushButton_clicked() {
+    bool status = ui->historyListView->isVisible();
+    ui->historyListView->setVisible(!status);
+    ui->historyLine->setVisible(!status);
+    ui->historyLabel->setVisible(!status);
 }
 
-void MainWindow::on_test2PushButton_clicked() {
-    ui->listView->setVisible(!ui->listView->isVisible());
-}
-
-void MainWindow::on_listView_doubleClicked(const QModelIndex &index) {
+void MainWindow::on_historyListView_doubleClicked(const QModelIndex &index) {
     QString info = setConfigString("{" + strlist[index.row()] + "}");
     if(info.length() != 0) {
         ui->noticeLabel->setText(QString::fromUtf8("异常配置: %1, 请报告开发者.").arg(info));
     } else {
         ui->viewButton->click();
+    }
+}
+
+void MainWindow::on_editSenderPushButton_clicked() {
+    bool status = ui->shaderTextEdit->isVisible();
+    if(status == true) { // 应用着色器
+        QString errstr = timesRender.read_string(ui->shaderTextEdit->toPlainText());
+        ui->shaderErrorLabel->setText(errstr);
+        if(errstr.length() == 0) { // 成功
+            ui->editSenderPushButton->setText(QString::fromUtf8("编辑着色器"));
+            ui->shaderTextEdit->setVisible(false);
+            ui->shaderLabel->setVisible(false);
+            ui->shaderErrorLabel->setVisible(false);
+            ui->shaderLine->setVisible(false);
+        }
+    } else { // 编辑着色器
+        ui->editSenderPushButton->setText(QString::fromUtf8("应用着色器"));
+        ui->shaderLine->setVisible(true);
+        ui->shaderTextEdit->setVisible(true);
+        ui->shaderLabel->setVisible(true);
+        ui->shaderErrorLabel->setVisible(true);
     }
 }
